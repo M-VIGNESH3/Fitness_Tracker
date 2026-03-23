@@ -2,14 +2,14 @@ apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
   name: example-gateway
-
+  namespace: default
 spec:
   gatewayClassName: kgateway
   listeners:
   - name: http
     protocol: HTTP
     port: 80
-    hostname: "www.example.com"
+    # Omit hostname for testing with IP/NodePort. Add a real FQDN later.
     allowedRoutes:
       namespaces:
         from: Same
