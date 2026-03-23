@@ -6,7 +6,7 @@ metadata:
 spec:
   type: NodePort
   selector:
-    gateway.networking.k8s.io/gateway-name: demo-gw
+    gateway.networking.k8s.io/gateway-name: example-gateway
   ports:
     - port: 80
       targetPort: 80
