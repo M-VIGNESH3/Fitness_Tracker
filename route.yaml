@@ -8,7 +8,6 @@ spec:
     - name: example-gateway
       sectionName: http
   rules:
-    # /fitness -> fitness-tracker-service
     - matches:
         - path:
             type: PathPrefix
@@ -23,7 +22,6 @@ spec:
         - name: fitness-tracker-service
           port: 80
 
-    # /capsule -> capsule-service
     - matches:
         - path:
             type: PathPrefix
