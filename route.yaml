@@ -1,3 +1,4 @@
+# route.yaml
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
@@ -5,20 +6,19 @@ metadata:
   namespace: default
 spec:
   parentRefs:
-  - name: example-gateway     # must match the Gateway's name
-    sectionName: http         # bind to the 'http' listener
+    - name: example-gateway     # <-- must match the Gateway name
+      sectionName: http         # <-- binds to the 'http' listener
   rules:
-  - matches:
-    - path:
-        type: PathPrefix
-        value: /fitness
-    filters:
-    - type: URLRewrite
-      urlRewrite:
-        path:
-          type: ReplacePrefixMatch
-          replacePrefixMatch: /
-    backendRefs:
-    - name: fitness-tracker-service   # <-- actual Service name
-      port: 80
-``
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /fitness
+      filters:
+        - type: URLRewrite
+          urlRewrite:
+            path:
+              type: ReplacePrefixMatch
+              replacePrefixMatch: /
+      backendRefs:
+        - name: fitness-tracker-service   # <-- actual Service name
+          port: 80
