@@ -4,4 +4,4 @@ kind: GatewayClass
 metadata:
   name: kgateway
 spec:
-  controllerName: kgateway.dev/kgateway
+  controllerName: haproxy.org/gateway-controller
