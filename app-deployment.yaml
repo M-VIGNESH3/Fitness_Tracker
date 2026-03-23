@@ -26,6 +26,7 @@ spec:
           envFrom:
             - configMapRef:
                 name: fitness-configmap
+          env:
             # Datadog APM (tracing) env variables
             - name: DD_AGENT_HOST
               valueFrom:
