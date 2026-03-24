@@ -4,6 +4,11 @@ metadata:
   name: fitness-tracker-app
 spec:
   replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
   selector:
     matchLabels:
       app: fitness-tracker-app
@@ -41,6 +46,13 @@ spec:
               value: "fitness-tracker-app"
             - name: DD_VERSION
               value: "1.0.0"
+        resources:
+          requests:
+            cpu: 100m
+            memory: 25Mi
+          limits:
+            cpu: 200m
+            memory: 512Mi
 ---
 
 apiVersion: v1
