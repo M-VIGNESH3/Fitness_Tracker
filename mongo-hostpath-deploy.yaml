@@ -29,8 +29,9 @@ spec:
               mountPath: /data/db
       volumes:
         - name: fv
-          emptyDir:
-            sizeLimit: 512Mi
+          hostPath:
+            path: /data/foo
+            type: Directory
 ---
 apiVersion: v1
 kind: Service
