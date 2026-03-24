@@ -30,7 +30,7 @@ spec:
       volumes:
         - name: fv
           hostPath:
-            path: /data/foo
+            path: /data/ust
             type: DirectoryOrCreate
 ---
 apiVersion: v1
