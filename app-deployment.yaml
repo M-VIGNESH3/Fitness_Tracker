@@ -46,13 +46,13 @@ spec:
               value: "fitness-tracker-app"
             - name: DD_VERSION
               value: "1.0.0"
-        resources:
-          requests:
-            cpu: 100m
-            memory: 25Mi
-          limits:
-            cpu: 200m
-            memory: 512Mi
+          resources:
+            requests:
+              cpu: 100m
+              memory: 25Mi
+            limits:
+              cpu: 200m
+              memory: 512Mi
 ---
 
 apiVersion: v1
