@@ -23,7 +23,7 @@ spec:
               memory: 256Mi
             limits:
               cpu: 200m
-              memory: 50Mi
+              memory: 500Mi
           volumeMounts:
             - name: fv
               mountPath: /data/db
