@@ -1,11 +1,12 @@
 apiVersion: v1
-kind: persistentVolume 
+kind: PersistentVolume
 metadata:
   name: fit-pv
-spec: 
-  capacity: 5Gi
-  accessmode:
-  - ReadWriteMany
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   nfs:
     path: /var/nfs/general
