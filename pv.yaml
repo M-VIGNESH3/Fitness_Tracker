@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolume 
+metadata:
+  name: fit-pv
+spec: 
+  capacity: 5Gi
+  accessmode:
+  - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /var/nfs/general
+    server: 43.205.253.35
