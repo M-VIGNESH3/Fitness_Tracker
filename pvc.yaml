@@ -3,9 +3,9 @@ kind: PersistentVolumeClaim
 metadata:
   name: fit-pvc
 spec:
-  accessmodes: 
+  accessModes: 
     - ReadWriteMany
   resources:
     requests:
-      storage: 500Mi
+      storage: 1Gi
       
