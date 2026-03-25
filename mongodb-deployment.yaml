@@ -29,8 +29,8 @@ spec:
               mountPath: /data/db
       volumes:
         - name: fv
-          emptyDir:
-            sizeLimit: 512Mi
+          persistentVolumeClaim: 
+            claimName: fit-pvc
 ---
 apiVersion: v1
 kind: Service
