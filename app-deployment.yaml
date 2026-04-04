@@ -24,7 +24,7 @@ spec:
       affinity:
         podAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
-          - LabelSelector:
+          - labelSelector:
             - matchExpressions:
               - key: env
                 operator: In
@@ -33,7 +33,7 @@ spec:
             topologyKey: kubernetes.io/ip-172-31-33-209
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
-          - LabelSelector:
+          - labelSelector:
               matchExpressions: 
               - key: env
                 operator: In
