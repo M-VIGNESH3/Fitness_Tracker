@@ -26,10 +26,10 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
             - matchExpressions:
-              - key: env
+              - key: app
                 operator: In
                 values:
-                - test
+                - fitness-tracker-app
             topologyKey: "kubernetes.io/hostname"
         # podAntiAffinity:
         #   preferredDuringSchedulingIgnoredDuringExecution:
