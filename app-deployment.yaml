@@ -30,7 +30,7 @@ spec:
                 operator: In
                 values:
                 - fitness-tracker-app
-            topologyKey: "kubernetes.io/hostname"
+            topologyKey: kubernetes.io/hostname
         # podAntiAffinity:
         #   preferredDuringSchedulingIgnoredDuringExecution:
         #     podAffinityTerm:
