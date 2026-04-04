@@ -30,7 +30,7 @@ spec:
                 operator: In
                 values:
                 - test
-            topologyKey: kubernetes.io/ip-172-31-33-209
+            topologyKey: "kubernetes.io/hostname"
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
@@ -39,7 +39,7 @@ spec:
                 operator: In
                 values:
                 - test
-            topologyKey: kubernetes.io/ip-172-31-33-209
+            topologyKey: "kubernetes.io/host-name"
       containers:
         - name: fitness-tracker-app
           image: pulkit197/fitness_tracker-master-copy3-fitness-app:latest
