@@ -21,6 +21,25 @@ spec:
           [{"source":"nodejs","service":"fitness-tracker-service"},
            {"source":"nodejs","service":"fitness-tracker-app"}]
     spec:
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+            - matchExpressions:
+              - key: env
+                operator: In
+                values:
+                - test
+            topologyKey: kubernetes.io/ip-172-31-33-209
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions: 
+              - key: env
+                operator: In
+                values:
+                - test
+            topologyKey: kubernetes.io/ip-172-31-33-209
       containers:
         - name: fitness-tracker-app
           image: pulkit197/fitness_tracker-master-copy3-fitness-app:latest
