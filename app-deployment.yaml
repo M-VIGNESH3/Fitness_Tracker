@@ -31,7 +31,7 @@ spec:
                 values:
                 - test
             topologyKey: "kubernetes.io/hostname"
-        podAntiAffinity:
+        podAntiAffinityTerm:
           preferredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
               matchExpressions: 
