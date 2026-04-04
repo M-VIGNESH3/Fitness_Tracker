@@ -31,14 +31,15 @@ spec:
                 values:
                 - test
             topologyKey: "kubernetes.io/hostname"
-        podAntiAffinityTerm:
+        podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions: 
-              - key: env
-                operator: In
-                values:
-                - test
+            podAffinityTerm:
+            - labelSelector:
+                matchExpressions: 
+                - key: env
+                  operator: In
+                  values:
+                  - test
             topologyKey: "kubernetes.io/host-name"
       containers:
         - name: fitness-tracker-app
