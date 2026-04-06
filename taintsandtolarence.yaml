@@ -15,8 +15,8 @@ spec:
       labels:
         app: nginx
     spec:
-      affinity:
-        nodeAffinity:
+      # affinity:
+      #   nodeAffinity:
           # requiredDuringSchedulingIgnoredDuringExecution:
           #   nodeSelectorTerms:
           #   - matchExpressions:
@@ -25,14 +25,14 @@ spec:
           #       values:
           #       - testing
  
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 1
-            preference:
-              matchExpressions:
-              - key: envs
-                operator: In
-                values:
-                - testing # actual test for checking changed to testing
+          # preferredDuringSchedulingIgnoredDuringExecution:
+          # - weight: 1
+          #   preference:
+          #     matchExpressions:
+          #     - key: envs
+          #       operator: In
+          #       values:
+          #       - testing # actual test for checking changed to testing
 
       tolerations:
       - key: "k"
