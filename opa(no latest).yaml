@@ -1,0 +1,21 @@
+apiVersion: template.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8snotlatest
+spec:
+  crd:
+    spec:
+      name:
+        kind: k8snotlatest
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8snotlatest
+
+        violation[{"msg": msg}] {
+          input.review.kind.kind == "Pod"
+          container := input.review.object.spec.containers[_]
+          container.image == "nginx:latest"
+          msg := sprintf("Container <%v> in Pod <%v> is using 'latest' tag, which is not allowed.", [container.name, input.review.object.metadata.name])
+        }
+        
