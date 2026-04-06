@@ -5,6 +5,6 @@ metadata:
 spec:
   match:
     kinds:
-      - apiGroups: ["apps"]
+      - apiGroups: ["apps/v1"]
         kinds: ["Deployments"]
  
