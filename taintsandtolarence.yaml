@@ -35,9 +35,9 @@ spec:
           #       - testing # actual test for checking changed to testing
 
       tolerations:
-      - key: "k"
+      - key: "ke"
         operator: "Equal"
-        value: "v"
+        value: "va"
         effect: "NoSchedule"
       containers:
       - name: nginx
