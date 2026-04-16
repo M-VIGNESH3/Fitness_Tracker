@@ -24,13 +24,13 @@ spec:
             limits:
               cpu: 200m
               memory: 500Mi
-          volumeMounts:
-            - name: fv
-              mountPath: /data/db
-      volumes:
-        - name: fv
-          persistentVolumeClaim: 
-            claimName: fit-pvc
+          # volumeMounts:
+          #   - name: fv
+          #     mountPath: /data/db
+      # volumes:
+      #   - name: fv
+      #     persistentVolumeClaim: 
+      #       claimName: fit-pvc
 ---
 apiVersion: v1
 kind: Service
